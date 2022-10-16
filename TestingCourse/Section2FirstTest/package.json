@@ -1,0 +1,16 @@
+{
+  "name": "section2firsttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.1.2",
+    "vitest": "^0.24.1"
+  }
+}
