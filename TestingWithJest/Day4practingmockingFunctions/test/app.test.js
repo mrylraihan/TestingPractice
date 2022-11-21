@@ -181,3 +181,14 @@ describe('calling mock fruit data', ()=>{
         expect(result).toEqual(mockPeople)
     })
 })
+
+describe('test startGame', ()=>{
+    it('should change startGame', ()=>{
+        const mockData = [1,2,3]
+        jest.spyOn(fn, 'startGame').mockImplementation(() => mockData)
+
+        const result = fn.startGame()
+
+        expect(result.length).toBe(3)
+    })
+})

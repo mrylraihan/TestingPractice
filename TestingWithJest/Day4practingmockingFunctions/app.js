@@ -34,6 +34,11 @@ const betterTestOfFakeData = ()=>{
     return people
 }
 
+
+const startGame = ()=>{
+
+}
+
 module.exports = {
     sayHello,
     getDetails,
@@ -42,5 +47,6 @@ module.exports = {
     useAdd,
     callFakeData,
     count,
-    betterTestOfFakeData
+    betterTestOfFakeData,
+    startGame
 }
