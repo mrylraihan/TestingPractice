@@ -10,6 +10,7 @@ describe('sumUp test',()=>{
         expect(result).toBe(4)
     })
 })
+
 describe('sumUp test',()=>{
     it('test non nums',()=>{
         const num1 = 'e'
