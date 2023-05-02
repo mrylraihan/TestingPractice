@@ -2,4 +2,6 @@ const returnHi = ()=>{
     return 'hi'
 }
 
-module.exports = {returnHi}
+const test = ''
+
+module.exports = {returnHi, test}

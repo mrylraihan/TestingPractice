@@ -38,4 +38,24 @@ describe('test returnHi function', ()=>{
         const result = app.returnHi()
         expect(result).toBe('hi')
     })
+
+    // now if you want to mock a property you have to do it differently
+    it('the test variable should return an empty string',()=>{
+        const result = app.test
+        expect(result).toBe('')
+    })
+    // now if you want mock a property(variable in the file) you can use .replaceProperty
+    it('test how to mock a property',()=>{
+        //  the first arg is the object the second is the variable name in string 
+        //the last is the value you want to replace it with
+        jest.replaceProperty(app, 'test', 'Hello')
+        const result = app.test
+        expect(result).toBe('Hello')
+    })
+    it('the test variable should return an empty string', () => {
+        // this will restore the variable to it original value
+        jest.restoreAllMocks()
+        const result = app.test
+        expect(result).toBe('')
+    })
 })
