@@ -1,11 +1,12 @@
 const validateIp = (input)=>{
-    let results = ''
+    let results = input
+    let arr = []
     if(!input){
-        results = undefined
+        return undefined
     }
     
+    arr = input.split('.');
 
-    let arr = input.split('.');
     if(arr.length<4){
         results = 'There are 4 parts to a valid IP Address'
     }else{
@@ -19,11 +20,16 @@ const validateIp = (input)=>{
             }
         });
     }
-return results
+
+    
+
+return results ? results:input
 
 }
 
-module.exports = validateIp
+const sayHi = ()=>"hi"
+
+module.exports ={validateIp, sayHi}
 
 input = '192..0.1'
 const test = input.split('.')

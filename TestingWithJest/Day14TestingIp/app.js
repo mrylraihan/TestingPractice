@@ -24,7 +24,7 @@ const validateIp = (input)=>{
 
 module.exports = validateIp
 
-input = '192..0.1'
-const test = input.split('.')
+// input = '192..0.1'
+// const test = input.split('.')
 
-console.log(test)
+// console.log(test)

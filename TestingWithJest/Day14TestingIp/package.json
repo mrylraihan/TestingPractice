@@ -2,7 +2,7 @@
   "name": "day14testingip",
   "version": "1.0.0",
   "description": "",
-  "main": "app2.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest --coverage"
   },

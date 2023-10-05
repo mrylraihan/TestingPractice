@@ -37,7 +37,7 @@ describe("validateIp", ()=>{
         expect (result).toBeTruthy()
         expect(result).toEqual('the first part of an IPv4 address cannot be zero')
     })
-    it("Should output an error message if the IP address contains a leading 0", ()=>{
+    it("Should return IP if valid", ()=>{
         let testIp = '192.121.223.112';
         const result = validateIp(testIp)
         

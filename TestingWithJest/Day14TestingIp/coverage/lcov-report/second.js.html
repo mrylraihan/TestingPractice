@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for app.js</title>
+    <title>Code coverage report for second.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> app.js</h1>
+        <h1><a href="index.html">All files</a> second.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>15/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -93,66 +93,87 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const validateIp = (input)=&gt;{
+    let results = input
+    let arr = []
     if(!input){
-        return 
+        return undefined
     }
-    // let result = ''
-    let ipArr = input.split('.')
-    if(ipArr.length&lt;=3){
-        return 'There are 4 parts to a valid IP Address'
+    
+    arr = input.split('.');
+&nbsp;
+    if(arr.length&lt;4){
+        results = 'There are 4 parts to a valid IP Address'
+    }else{
+        arr.forEach(element =&gt; {
+            if(element == ''){
+                results = 'a valid IP has 4 numerical parts'
+            }else if(+element&gt;255||+element&lt;0 &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >element !=""&amp;</span>&amp; <span class="branch-3 cbranch-no" title="branch not covered" >!(element[0]&amp;&amp;element[1]))</span>{
+                results = 'a valid IP has 4 numerical parts is not less then 0 and no more then 255'
+            }else if(element[0]=="0" &amp;&amp; element[1]){
+                results = "the first part of an IPv4 address cannot be zero"
+            }
+        });
     }
 &nbsp;
-    if(ipArr.includes("")){
-        return 'a valid IP has 4 numerical parts'
-    }
+    
 &nbsp;
-    if(ipArr.find(ele=&gt;+ele&lt;0||+ele&gt;255)){
-        return "a valid IP has 4 numerical parts is not less then 0 and no more then 255"
-    }
-    if (ipArr.find(ele =&gt; ele.length &gt; 1 &amp;&amp; +ele[0] === 0)){
-        return `the first part of an IPv4 address cannot be zero`
-    }
+return results ? results:<span class="branch-1 cbranch-no" title="branch not covered" >input</span>
 &nbsp;
-    return input
 }
 &nbsp;
-module.exports = validateIp
+const sayHi = ()=&gt;"hi"
 &nbsp;
-// input = '192..0.1'
-// const test = input.split('.')
+module.exports ={validateIp, sayHi}
 &nbsp;
-// console.log(test)
+input = '192..0.1'
+const test = input.split('.')
+&nbsp;
+console.log(test)
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

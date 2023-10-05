@@ -1,11 +1,11 @@
-const validateIp = require('../app')
+const { validateIp, sayHi } = require('../second')
 
 
 describe("validateIp", ()=>{
     it('Should output undefined if no input is passed through', ()=>{
         let emptyIp;
         const result = validateIp(emptyIp)
-        expect(result).toBeUndefined()
+        // expect(result).toBeUndefined()
         expect(result).toBeFalsy()
         expect(result).toEqual(undefined)
     })
@@ -37,12 +37,16 @@ describe("validateIp", ()=>{
         expect (result).toBeTruthy()
         expect(result).toEqual('the first part of an IPv4 address cannot be zero')
     })
-    it("Should output an error message if the IP address contains a leading 0", ()=>{
+    it("if Ip is correct return ip", ()=>{
         let testIp = '192.121.223.112';
         const result = validateIp(testIp)
         
         expect (result).toBeTruthy()
         expect(result).toEqual(testIp)
+    })
+    it('sayHi',()=>{
+        let result = sayHi()
+        expect(result).toBe("hi")
     })
    
 })
